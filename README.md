@@ -1,2 +1,102 @@
-# customer segmentation project
-# 📊 Customer Personality Analysis & SegmentationProject OverviewThis project applies Unsupervised Machine Learning to segment a customer base of 2,240 individuals. By using K-Means Clustering, I identified four distinct customer personas based on their income and spending habits. This allows a business to move away from "one-size-fits-all" marketing and move toward targeted, data-driven strategies.The Technical PipelineData Cleaning: * Handled missing values in the Income column using median imputation.Removed non-informative features like ID, Z_CostContact, and Z_Revenue.Feature Engineering: * Derived Age from Year_Birth.Created Total_Spending by aggregating spending across all product categories (Wines, Fruits, Meat, etc.).Data Transformation: * Applied StandardScaler to normalize features. Since K-Means is a distance-based algorithm, scaling ensures that features with larger ranges (like Income) do not dominate those with smaller ranges (like Age).Optimization: * Utilized the Elbow Method to determine the optimal number of clusters ($K=4$), balancing model complexity with the Within-Cluster Sum of Squares (WCSS).Customer Profiles (Inferences)Based on the final clustering results, the customer base is divided into these four segments:Cluster 0: The "VIPs" (Top Right)Profile: High Income, High Spending.Strategy: Focus on loyalty programs and exclusive, high-ticket product launches.Cluster 1: The "Budget-Conscious" (Bottom Left)Profile: Low Income, Low Spending.Strategy: Targeted discounts and value-for-money promotions.Cluster 2: The "Aspirants" (Top Left)Profile: Low-to-Mid Income but High Spending.Strategy: These customers prioritize quality or status; use influencer marketing or trend-based campaigns.Cluster 3: The "Steady Base" (Mid Right)Profile: Mid-to-High Income, Moderate Spending.Strategy: Frequent engagement through newsletters to maintain consistent purchasing habits.Technologies UsedLanguage: Python 3.xLibraries: Pandas, NumPy, Matplotlib, SeabornMachine Learning: Scikit-Learn (K-Means, StandardScaler)
+# Customer Segmentation Project
+
+## Overview
+
+This project applies **unsupervised machine learning** to segment a customer base of **2,240 individuals** using **K-Means clustering**.
+The objective is to identify distinct customer personas based on **income and spending behavior**, enabling targeted and data-driven marketing strategies.
+
+---
+
+## Dataset
+
+* **Name:** Customer Personality Analysis
+* **Size:** 2,240 customers
+* **Key Features:**
+
+  * Income
+  * Year of Birth
+  * Spending across multiple product categories (Wines, Fruits, Meat, etc.)
+
+
+---
+
+## Methodology
+
+### 1. Data Cleaning
+
+* Handled missing values in the 'Income` column using **median imputation**
+* Removed non-informative features:
+
+  * `ID`
+  * `Z_CostContact`
+  * `Z_Revenue`
+
+### 2. Feature Engineering
+
+* Derived **Age** from `Year_Birth`
+* Created **Total_Spending** by aggregating spending across all product categories
+
+### 3. Data Transformation
+
+* Applied **StandardScaler** to normalize numerical features
+* Scaling was necessary since **K-Means is a distance-based algorithm**
+
+### 4. Model Selection
+
+* Used the **Elbow Method** to determine the optimal number of clusters
+* Selected **K = 4** based on the Within-Cluster Sum of Squares (WCSS)
+
+---
+
+## Customer Segments Identified
+
+### Cluster 0 — *VIPs*
+
+* **Profile:** High income, high spending
+* **Strategy:** Loyalty programs, premium products, exclusive offers
+
+### Cluster 1 — *Budget-Conscious*
+
+* **Profile:** Low income, low spending
+* **Strategy:** Discounts and value-for-money promotions
+
+### Cluster 2 — *Aspirants*
+
+* **Profile:** Low-to-mid income, high spending
+* **Strategy:** Trend-based campaigns, influencer marketing
+
+### Cluster 3 — *Steady Base*
+
+* **Profile:** Mid-to-high income, moderate spending
+* **Strategy:** Consistent engagement via newsletters and offers
+
+---
+
+## Technologies Used
+
+* **Python 3.11**
+* **Pandas**, **NumPy**
+* **Matplotlib**, **Seaborn**
+* **Scikit-learn** (KMeans, StandardScaler)
+
+---
+
+## How to Run
+
+```bash
+pip install -r requirements.txt
+```
+
+Then open the notebook:
+
+```
+Customer_Segmentation_Analysis.ipynb
+```
+
+---
+
+## Key Takeaways
+
+* Feature scaling is critical for clustering algorithms
+* Income and total spending strongly influence customer segmentation
+* Unsupervised learning can generate actionable business insights
